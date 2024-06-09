@@ -17,6 +17,10 @@
 		4CEDE9C72C1569A900A64328 /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9C62C1569A900A64328 /* PassThrough.metal */; };
 		4CEDE9C92C156D0B00A64328 /* FilterRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9C82C156D0B00A64328 /* FilterRenderer.swift */; };
 		4CEDE9CB2C156D5D00A64328 /* EdgeCIRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9CA2C156D5D00A64328 /* EdgeCIRenderer.swift */; };
+		4CEDE9CD2C15739400A64328 /* FFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9CC2C15739400A64328 /* FFT.swift */; };
+		4CEDE9CF2C1573E100A64328 /* ImageToAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9CE2C1573E100A64328 /* ImageToAudio.swift */; };
+		4CEDE9D12C16446E00A64328 /* WavWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9D02C16446E00A64328 /* WavWriter.swift */; };
+		4CEDE9D32C16474B00A64328 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9D22C16474B00A64328 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		4CEDE9C62C1569A900A64328 /* PassThrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
 		4CEDE9C82C156D0B00A64328 /* FilterRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRenderer.swift; sourceTree = "<group>"; };
 		4CEDE9CA2C156D5D00A64328 /* EdgeCIRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeCIRenderer.swift; sourceTree = "<group>"; };
+		4CEDE9CC2C15739400A64328 /* FFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFT.swift; sourceTree = "<group>"; };
+		4CEDE9CE2C1573E100A64328 /* ImageToAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToAudio.swift; sourceTree = "<group>"; };
+		4CEDE9D02C16446E00A64328 /* WavWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavWriter.swift; sourceTree = "<group>"; };
+		4CEDE9D22C16474B00A64328 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,10 @@
 				4CEDE9C12C15683A00A64328 /* PreviewMetalView.swift */,
 				4CEDE9C82C156D0B00A64328 /* FilterRenderer.swift */,
 				4CEDE9CA2C156D5D00A64328 /* EdgeCIRenderer.swift */,
+				4CEDE9CC2C15739400A64328 /* FFT.swift */,
+				4CEDE9CE2C1573E100A64328 /* ImageToAudio.swift */,
+				4CEDE9D02C16446E00A64328 /* WavWriter.swift */,
+				4CEDE9D22C16474B00A64328 /* Extensions.swift */,
 				4CEDE9C62C1569A900A64328 /* PassThrough.metal */,
 				4CEDE9B52C155D3400A64328 /* Assets.xcassets */,
 				4CEDE9B72C155D3400A64328 /* Preview Content */,
@@ -164,8 +176,12 @@
 				4CEDE9C22C15683A00A64328 /* PreviewMetalView.swift in Sources */,
 				4CEDE9C92C156D0B00A64328 /* FilterRenderer.swift in Sources */,
 				4CEDE9B42C155D3300A64328 /* MainView.swift in Sources */,
+				4CEDE9CD2C15739400A64328 /* FFT.swift in Sources */,
+				4CEDE9CF2C1573E100A64328 /* ImageToAudio.swift in Sources */,
 				4CEDE9C72C1569A900A64328 /* PassThrough.metal in Sources */,
+				4CEDE9D12C16446E00A64328 /* WavWriter.swift in Sources */,
 				4CEDE9CB2C156D5D00A64328 /* EdgeCIRenderer.swift in Sources */,
+				4CEDE9D32C16474B00A64328 /* Extensions.swift in Sources */,
 				4CEDE9B22C155D3300A64328 /* CamtrogramApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
