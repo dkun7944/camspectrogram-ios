@@ -57,30 +57,7 @@ class AVCaptureViewController: UIViewController {
                 self.previewView.rotation = rotation
             }
         }
-
-//        NotificationCenter.default.addObserver(self, selector: #selector(sessionDidStartRunning),
-//                                               name: .AVCaptureSessionDidStartRunning,
-//                                               object: CaptureSessionManager.shared.captureSession)
-//        NotificationCenter.default.addObserver(self, selector: #selector(sessionDidStopRunning),
-//                                               name: .AVCaptureSessionDidStopRunning,
-//                                               object: CaptureSessionManager.shared.captureSession)
     }
-
-//    @objc func sessionDidStartRunning() {
-//        DispatchQueue.main.async {
-//            UIView.animate(withDuration: 0.25) {
-//                self.previewLayer.opacity = 1.0
-//            }
-//        }
-//    }
-//
-//    @objc func sessionDidStopRunning() {
-//        DispatchQueue.main.async {
-//            UIView.animate(withDuration: 0.25) {
-//                self.previewLayer.opacity = 0.0
-//            }
-//        }
-//    }
 
     deinit {
         view.layer.removeObserver(self, forKeyPath: "bounds")
