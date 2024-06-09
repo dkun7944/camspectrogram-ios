@@ -8,17 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		4CEDE9B22C155D3300A64328 /* CamtrogramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9B12C155D3300A64328 /* CamtrogramApp.swift */; };
-		4CEDE9B42C155D3300A64328 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9B32C155D3300A64328 /* ContentView.swift */; };
+		4CEDE9B42C155D3300A64328 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9B32C155D3300A64328 /* MainView.swift */; };
 		4CEDE9B62C155D3400A64328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEDE9B52C155D3400A64328 /* Assets.xcassets */; };
 		4CEDE9B92C155D3400A64328 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEDE9B82C155D3400A64328 /* Preview Assets.xcassets */; };
+		4CEDE9C02C155DB800A64328 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9BF2C155DB800A64328 /* CameraView.swift */; };
+		4CEDE9C22C15683A00A64328 /* PreviewMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9C12C15683A00A64328 /* PreviewMetalView.swift */; };
+		4CEDE9C52C15691300A64328 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 4CEDE9C42C15691300A64328 /* PureLayout */; };
+		4CEDE9C72C1569A900A64328 /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9C62C1569A900A64328 /* PassThrough.metal */; };
+		4CEDE9C92C156D0B00A64328 /* FilterRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9C82C156D0B00A64328 /* FilterRenderer.swift */; };
+		4CEDE9CB2C156D5D00A64328 /* EdgeCIRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9CA2C156D5D00A64328 /* EdgeCIRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4CEDE9AE2C155D3300A64328 /* Camtrogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Camtrogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEDE9B12C155D3300A64328 /* CamtrogramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamtrogramApp.swift; sourceTree = "<group>"; };
-		4CEDE9B32C155D3300A64328 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CEDE9B32C155D3300A64328 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4CEDE9B52C155D3400A64328 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CEDE9B82C155D3400A64328 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4CEDE9BF2C155DB800A64328 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		4CEDE9C12C15683A00A64328 /* PreviewMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMetalView.swift; sourceTree = "<group>"; };
+		4CEDE9C62C1569A900A64328 /* PassThrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
+		4CEDE9C82C156D0B00A64328 /* FilterRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRenderer.swift; sourceTree = "<group>"; };
+		4CEDE9CA2C156D5D00A64328 /* EdgeCIRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeCIRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEDE9C52C15691300A64328 /* PureLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +64,12 @@
 			isa = PBXGroup;
 			children = (
 				4CEDE9B12C155D3300A64328 /* CamtrogramApp.swift */,
-				4CEDE9B32C155D3300A64328 /* ContentView.swift */,
+				4CEDE9B32C155D3300A64328 /* MainView.swift */,
+				4CEDE9BF2C155DB800A64328 /* CameraView.swift */,
+				4CEDE9C12C15683A00A64328 /* PreviewMetalView.swift */,
+				4CEDE9C82C156D0B00A64328 /* FilterRenderer.swift */,
+				4CEDE9CA2C156D5D00A64328 /* EdgeCIRenderer.swift */,
+				4CEDE9C62C1569A900A64328 /* PassThrough.metal */,
 				4CEDE9B52C155D3400A64328 /* Assets.xcassets */,
 				4CEDE9B72C155D3400A64328 /* Preview Content */,
 			);
@@ -83,6 +100,9 @@
 			dependencies = (
 			);
 			name = Camtrogram;
+			packageProductDependencies = (
+				4CEDE9C42C15691300A64328 /* PureLayout */,
+			);
 			productName = Camtrogram;
 			productReference = 4CEDE9AE2C155D3300A64328 /* Camtrogram.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 4CEDE9A52C155D3300A64328;
+			packageReferences = (
+				4CEDE9C32C15691300A64328 /* XCRemoteSwiftPackageReference "PureLayout" */,
+			);
 			productRefGroup = 4CEDE9AF2C155D3300A64328 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CEDE9B42C155D3300A64328 /* ContentView.swift in Sources */,
+				4CEDE9C02C155DB800A64328 /* CameraView.swift in Sources */,
+				4CEDE9C22C15683A00A64328 /* PreviewMetalView.swift in Sources */,
+				4CEDE9C92C156D0B00A64328 /* FilterRenderer.swift in Sources */,
+				4CEDE9B42C155D3300A64328 /* MainView.swift in Sources */,
+				4CEDE9C72C1569A900A64328 /* PassThrough.metal in Sources */,
+				4CEDE9CB2C156D5D00A64328 /* EdgeCIRenderer.swift in Sources */,
 				4CEDE9B22C155D3300A64328 /* CamtrogramApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +303,7 @@
 				DEVELOPMENT_TEAM = M24FQVR7AD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camtrogram uses your camera to take photos and synthesize audio.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +333,7 @@
 				DEVELOPMENT_TEAM = M24FQVR7AD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camtrogram uses your camera to take photos and synthesize audio.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4CEDE9C32C15691300A64328 /* XCRemoteSwiftPackageReference "PureLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PureLayout/PureLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4CEDE9C42C15691300A64328 /* PureLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CEDE9C32C15691300A64328 /* XCRemoteSwiftPackageReference "PureLayout" */;
+			productName = PureLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4CEDE9A62C155D3300A64328 /* Project object */;
 }
