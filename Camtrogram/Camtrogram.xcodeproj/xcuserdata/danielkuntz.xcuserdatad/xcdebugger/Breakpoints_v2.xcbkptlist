@@ -94,8 +94,8 @@
             filePath = "Camtrogram/ImageToAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "run(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -114,6 +114,54 @@
             endingLineNumber = "86"
             landmarkName = "photoOutput(_:didFinishProcessingPhoto:error:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F9C67F1-61CB-40FB-B2B9-A070E0616A0E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Camtrogram/ImageToAudio.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "run(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4F9C67F1-61CB-40FB-B2B9-A070E0616A0E - d3fee69fbae69033"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Camtrogram.ImageToAudio.run(__C.UIImage) -&gt; Swift.ContiguousArray&lt;Swift.Float&gt;"
+                  moduleName = "Camtrogram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielkuntz/git/camspectrogram-ios/Camtrogram/Camtrogram/ImageToAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "2968">
+               </Location>
+               <Location
+                  uuid = "4F9C67F1-61CB-40FB-B2B9-A070E0616A0E - d3fee69fbae69033"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Camtrogram.ImageToAudio.run(__C.UIImage) -&gt; Swift.ContiguousArray&lt;Swift.Float&gt;"
+                  moduleName = "Camtrogram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielkuntz/git/camspectrogram-ios/Camtrogram/Camtrogram/ImageToAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "3340">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -119,9 +119,7 @@ class FFT {
 //        real = stride(from: 0, to: interleavedOutput.count - 1, by: 2).map { interleavedOutput[$0] }
 //        imag = stride(from: 1, to: interleavedOutput.count - 1, by: 2).map { interleavedOutput[$0] }
 
-        let halfN = mags.count / 2
-        // Phase accumulation
-        for i in 0..<halfN {
+        for i in 0..<mags.count {
             // Convert back to real / imaginary
             real[i] = mags[i] * cos(phases[i])
             imag[i] = mags[i] * sin(phases[i])
