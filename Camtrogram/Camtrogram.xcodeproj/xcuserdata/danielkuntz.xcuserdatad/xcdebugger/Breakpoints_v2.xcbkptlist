@@ -46,8 +46,8 @@
             filePath = "Camtrogram/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "photoOutput(_:didFinishProcessingPhoto:error:)"
             landmarkType = "7">
             <Locations>
@@ -97,22 +97,6 @@
             startingLineNumber = "92"
             endingLineNumber = "92"
             landmarkName = "run(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8A75CDCE-73A2-4384-89A3-4084D4D87D5B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Camtrogram/MainView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "photoOutput(_:didFinishProcessingPhoto:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

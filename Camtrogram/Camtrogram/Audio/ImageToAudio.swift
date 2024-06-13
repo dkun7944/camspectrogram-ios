@@ -9,7 +9,7 @@ import UIKit
 import Accelerate
 
 struct ImageToAudio {
-    static let FFT_SIZE = 4096
+    static let FFT_SIZE = 8192
 
     private static var window: [Float] = {
         var window = [Float](repeating: 0, count: FFT_SIZE)
@@ -49,7 +49,7 @@ struct ImageToAudio {
 
         var outBuffer: ContiguousArray<Float> = []
 
-        for x in stride(from: 0, to: width - 1, by: 2) {
+        for x in stride(from: width - 1, to: 0, by: -4) {
             var column: [Float] = []
             for y in 0..<height {
                 let byteIndex = (bytesPerRow * y) + x * bytesPerPixel
@@ -91,8 +91,13 @@ struct ImageToAudio {
         WavWriter.createWav(fromBuffer: outBuffer, filename: UUID().uuidString) { wavUrl in
             print(wavUrl)
 
-            let activityVC = UIActivityViewController(activityItems: [wavUrl], applicationActivities: nil)
-            UIApplication.shared.topViewController?.present(activityVC, animated: true)
+            let sound = Sound(fileUrl: wavUrl)
+            AudioEngine.shared.reset()
+            AudioEngine.shared.sound = sound
+            AudioEngine.shared.startPlaying()
+
+//            let activityVC = UIActivityViewController(activityItems: [wavUrl], applicationActivities: nil)
+//            UIApplication.shared.topViewController?.present(activityVC, animated: true)
         }
 
         return outBuffer

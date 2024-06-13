@@ -21,6 +21,9 @@
 		4CEDE9CF2C1573E100A64328 /* ImageToAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9CE2C1573E100A64328 /* ImageToAudio.swift */; };
 		4CEDE9D12C16446E00A64328 /* WavWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9D02C16446E00A64328 /* WavWriter.swift */; };
 		4CEDE9D32C16474B00A64328 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDE9D22C16474B00A64328 /* Extensions.swift */; };
+		4CFC58892C1B84AE0082D8D5 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC58882C1B84AE0082D8D5 /* AudioEngine.swift */; };
+		4CFC588B2C1B84EB0082D8D5 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC588A2C1B84EB0082D8D5 /* Sound.swift */; };
+		4CFC588F2C1B85270082D8D5 /* ScrubbingResynthesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC588E2C1B85270082D8D5 /* ScrubbingResynthesis.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		4CEDE9CE2C1573E100A64328 /* ImageToAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToAudio.swift; sourceTree = "<group>"; };
 		4CEDE9D02C16446E00A64328 /* WavWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavWriter.swift; sourceTree = "<group>"; };
 		4CEDE9D22C16474B00A64328 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4CFC58882C1B84AE0082D8D5 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		4CFC588A2C1B84EB0082D8D5 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		4CFC588E2C1B85270082D8D5 /* ScrubbingResynthesis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrubbingResynthesis.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +80,8 @@
 				4CEDE9B12C155D3300A64328 /* CamtrogramApp.swift */,
 				4CEDE9B32C155D3300A64328 /* MainView.swift */,
 				4CEDE9BF2C155DB800A64328 /* CameraView.swift */,
-				4CEDE9C12C15683A00A64328 /* PreviewMetalView.swift */,
-				4CEDE9C82C156D0B00A64328 /* FilterRenderer.swift */,
-				4CEDE9CA2C156D5D00A64328 /* EdgeCIRenderer.swift */,
-				4CEDE9CC2C15739400A64328 /* FFT.swift */,
-				4CEDE9CE2C1573E100A64328 /* ImageToAudio.swift */,
-				4CEDE9D02C16446E00A64328 /* WavWriter.swift */,
+				4CFC588D2C1B84FD0082D8D5 /* Image */,
+				4CFC588C2C1B84F50082D8D5 /* Audio */,
 				4CEDE9D22C16474B00A64328 /* Extensions.swift */,
 				4CEDE9C62C1569A900A64328 /* PassThrough.metal */,
 				4CEDE9B52C155D3400A64328 /* Assets.xcassets */,
@@ -94,6 +96,29 @@
 				4CEDE9B82C155D3400A64328 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4CFC588C2C1B84F50082D8D5 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				4CEDE9CE2C1573E100A64328 /* ImageToAudio.swift */,
+				4CEDE9D02C16446E00A64328 /* WavWriter.swift */,
+				4CFC58882C1B84AE0082D8D5 /* AudioEngine.swift */,
+				4CFC588E2C1B85270082D8D5 /* ScrubbingResynthesis.swift */,
+				4CFC588A2C1B84EB0082D8D5 /* Sound.swift */,
+				4CEDE9CC2C15739400A64328 /* FFT.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		4CFC588D2C1B84FD0082D8D5 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				4CEDE9C12C15683A00A64328 /* PreviewMetalView.swift */,
+				4CEDE9C82C156D0B00A64328 /* FilterRenderer.swift */,
+				4CEDE9CA2C156D5D00A64328 /* EdgeCIRenderer.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFC588B2C1B84EB0082D8D5 /* Sound.swift in Sources */,
+				4CFC58892C1B84AE0082D8D5 /* AudioEngine.swift in Sources */,
 				4CEDE9C02C155DB800A64328 /* CameraView.swift in Sources */,
 				4CEDE9C22C15683A00A64328 /* PreviewMetalView.swift in Sources */,
 				4CEDE9C92C156D0B00A64328 /* FilterRenderer.swift in Sources */,
@@ -181,6 +208,7 @@
 				4CEDE9C72C1569A900A64328 /* PassThrough.metal in Sources */,
 				4CEDE9D12C16446E00A64328 /* WavWriter.swift in Sources */,
 				4CEDE9CB2C156D5D00A64328 /* EdgeCIRenderer.swift in Sources */,
+				4CFC588F2C1B85270082D8D5 /* ScrubbingResynthesis.swift in Sources */,
 				4CEDE9D32C16474B00A64328 /* Extensions.swift in Sources */,
 				4CEDE9B22C155D3300A64328 /* CamtrogramApp.swift in Sources */,
 			);

@@ -28,3 +28,23 @@ extension UIApplication {
         return "\(appVersionString) (\(buildNumber))"
     }
 }
+
+extension Comparable {
+    func clamped(to limits: ClosedRange<Self>) -> Self {
+        return min(max(self, limits.lowerBound), limits.upperBound)
+    }
+}
+
+extension Float {
+    func rounded(toPlaces places: Int) -> Float {
+        let divisor = powf(10.0, Float(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
+
+extension Double {
+    func rounded(toPlaces places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}

@@ -58,10 +58,6 @@ class AVCaptureViewController: UIViewController {
             }
         }
     }
-
-    deinit {
-        view.layer.removeObserver(self, forKeyPath: "bounds")
-    }
 }
 
 extension AVCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -71,15 +67,15 @@ extension AVCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate 
             return
         }
 
-        if !filter.isPrepared {
-            filter.prepare(with: formatDescription, outputRetainedBufferCountHint: 3)
-        }
+//        if !filter.isPrepared {
+//            filter.prepare(with: formatDescription, outputRetainedBufferCountHint: 3)
+//        }
 
-        guard let filteredBuffer = filter.render(pixelBuffer: videoPixelBuffer) else {
-            return
-        }
+//        guard let filteredBuffer = filter.render(pixelBuffer: videoPixelBuffer) else {
+//            return
+//        }
 
-        previewView.pixelBuffer = filteredBuffer
+        previewView.pixelBuffer = videoPixelBuffer
     }
 }
 
@@ -142,9 +138,4 @@ class CaptureSessionManager {
             self.captureSession.stopRunning()
         }
     }
-}
-
-#Preview {
-    CameraView()
-        .ignoresSafeArea()
 }

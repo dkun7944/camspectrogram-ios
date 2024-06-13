@@ -8,14 +8,41 @@
 import SwiftUI
 import AVFoundation
 
+struct MaskRevealImage: View {
+    var image: UIImage
+    @State private var animate: Bool = false
+
+    var body: some View {
+        Image(uiImage: image)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .ignoresSafeArea()
+            .mask {
+                GeometryReader { geo in
+                    VStack(alignment: .leading) {
+                        Rectangle()
+                            .frame(width: animate ? geo.size.width: 0.0)
+                            .animation(.easeInOut(duration: 0.4), value: animate)
+                    }
+                }
+            }
+            .onAppear {
+                animate = true
+            }
+    }
+}
+
 struct MainView: View {
     @StateObject var model: MainViewModel = MainViewModel()
+    @StateObject var audioEngine: AudioEngine = AudioEngine.shared
 
     var body: some View {
         ZStack {
-            if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] != "1" {
+            if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] != "1" && 
+               model.capturedImage == nil {
                 CameraView(photoOutput: model.photoOutput)
                     .ignoresSafeArea()
+                    .transition(.opacity.animation(.easeInOut(duration: 0.2)))
             } else {
                 Color.black
                     .ignoresSafeArea()
@@ -26,13 +53,37 @@ struct MainView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .ignoresSafeArea()
+                    .transition(.opacity.animation(.easeInOut(duration: 0.2)))
             }
+
+            if let capturedFilteredImage = model.capturedFilteredImage {
+                MaskRevealImage(image: capturedFilteredImage)
+                    .saturation(0.0)
+            }
+
+            Color.clear
+                .ignoresSafeArea()
+                .overlay {
+                    GeometryReader { geo in
+                        VStack(alignment: .leading) {
+                            Rectangle()
+                                .fill(Color.white)
+                                .frame(width: 1.0)
+                                .offset(x: geo.size.width * CGFloat(audioEngine.playheadProgress))
+                        }
+                    }
+                }
 
             VStack {
                 Spacer()
 
                 Button {
-                    model.capturePhoto()
+                    if model.capturedImage != nil {
+                        model.capturedImage = nil
+                        model.capturedFilteredImage = nil
+                    } else {
+                        model.capturePhoto()
+                    }
                 } label: {
                     Circle()
                 }
@@ -47,6 +98,7 @@ struct MainView: View {
 
 class MainViewModel: NSObject, ObservableObject {
     @Published var capturedImage: UIImage?
+    @Published var capturedFilteredImage: UIImage?
     var photoOutput: AVCapturePhotoOutput
 
     private var ciContext: CIContext = CIContext()
@@ -66,6 +118,7 @@ extension MainViewModel: AVCapturePhotoCaptureDelegate {
             return
         }
 
+        self.capturedImage = UIImage(data: photoData)
         guard let ciImage = CIImage(data: photoData) else { return }
 
         let filter = CIFilter(name: "CIEdges")
@@ -82,8 +135,12 @@ extension MainViewModel: AVCapturePhotoCaptureDelegate {
         guard let filteredImage = filteredImage else {
             return
         }
-        self.capturedImage = filteredImage
-        _ = ImageToAudio.run(filteredImage)
+
+        self.capturedFilteredImage = filteredImage.withHorizontallyFlippedOrientation()
+
+        Task(priority: .userInitiated) {
+            _ = ImageToAudio.run(filteredImage)
+        }
     }
 }
 
