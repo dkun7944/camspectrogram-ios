@@ -24,6 +24,8 @@
 		4CFC58892C1B84AE0082D8D5 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC58882C1B84AE0082D8D5 /* AudioEngine.swift */; };
 		4CFC588B2C1B84EB0082D8D5 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC588A2C1B84EB0082D8D5 /* Sound.swift */; };
 		4CFC588F2C1B85270082D8D5 /* ScrubbingResynthesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC588E2C1B85270082D8D5 /* ScrubbingResynthesis.swift */; };
+		4CFC58942C1BAB920082D8D5 /* ScalingPressButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC58932C1BAB920082D8D5 /* ScalingPressButtonStyle.swift */; };
+		4CFC58962C1BAD020082D8D5 /* noise_reveal.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC58952C1BAD020082D8D5 /* noise_reveal.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		4CFC58882C1B84AE0082D8D5 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		4CFC588A2C1B84EB0082D8D5 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		4CFC588E2C1B85270082D8D5 /* ScrubbingResynthesis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrubbingResynthesis.swift; sourceTree = "<group>"; };
+		4CFC58932C1BAB920082D8D5 /* ScalingPressButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingPressButtonStyle.swift; sourceTree = "<group>"; };
+		4CFC58952C1BAD020082D8D5 /* noise_reveal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = noise_reveal.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				4CEDE9B12C155D3300A64328 /* CamtrogramApp.swift */,
 				4CEDE9B32C155D3300A64328 /* MainView.swift */,
 				4CEDE9BF2C155DB800A64328 /* CameraView.swift */,
+				4CFC58952C1BAD020082D8D5 /* noise_reveal.metal */,
+				4CFC58922C1BAB830082D8D5 /* SwiftUI */,
 				4CFC588D2C1B84FD0082D8D5 /* Image */,
 				4CFC588C2C1B84F50082D8D5 /* Audio */,
 				4CEDE9D22C16474B00A64328 /* Extensions.swift */,
@@ -119,6 +125,14 @@
 				4CEDE9CA2C156D5D00A64328 /* EdgeCIRenderer.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		4CFC58922C1BAB830082D8D5 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC58932C1BAB920082D8D5 /* ScalingPressButtonStyle.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +218,7 @@
 				4CEDE9C92C156D0B00A64328 /* FilterRenderer.swift in Sources */,
 				4CEDE9B42C155D3300A64328 /* MainView.swift in Sources */,
 				4CEDE9CD2C15739400A64328 /* FFT.swift in Sources */,
+				4CFC58942C1BAB920082D8D5 /* ScalingPressButtonStyle.swift in Sources */,
 				4CEDE9CF2C1573E100A64328 /* ImageToAudio.swift in Sources */,
 				4CEDE9C72C1569A900A64328 /* PassThrough.metal in Sources */,
 				4CEDE9D12C16446E00A64328 /* WavWriter.swift in Sources */,
@@ -211,6 +226,7 @@
 				4CFC588F2C1B85270082D8D5 /* ScrubbingResynthesis.swift in Sources */,
 				4CEDE9D32C16474B00A64328 /* Extensions.swift in Sources */,
 				4CEDE9B22C155D3300A64328 /* CamtrogramApp.swift in Sources */,
+				4CFC58962C1BAD020082D8D5 /* noise_reveal.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

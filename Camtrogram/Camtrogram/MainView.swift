@@ -38,41 +38,57 @@ struct MainView: View {
 
     var body: some View {
         ZStack {
-            if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] != "1" && 
-               model.capturedImage == nil {
-                CameraView(photoOutput: model.photoOutput)
-                    .ignoresSafeArea()
-                    .transition(.opacity.animation(.easeInOut(duration: 0.2)))
-            } else {
-                Color.black
-                    .ignoresSafeArea()
-            }
+            ZStack {
+                if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] != "1" &&
+                    model.capturedImage == nil {
+                    CameraView(photoOutput: model.photoOutput)
+                        .transition(.opacity.animation(.easeInOut(duration: 0.2)))
+                } else {
+                    Color.black
+                        .ignoresSafeArea()
+                }
 
-            if let capturedImage = model.capturedImage {
-                Image(uiImage: capturedImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                if let capturedImage = model.capturedImage {
+                    Image(uiImage: capturedImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .transition(.opacity.animation(.easeInOut(duration: 0.2)))
+                }
+
+                if let capturedFilteredImage = model.capturedFilteredImage {
+                    MaskRevealImage(image: capturedFilteredImage)
+                        .saturation(0.0)
+                }
+
+                Color.clear
                     .ignoresSafeArea()
-                    .transition(.opacity.animation(.easeInOut(duration: 0.2)))
-            }
-
-            if let capturedFilteredImage = model.capturedFilteredImage {
-                MaskRevealImage(image: capturedFilteredImage)
-                    .saturation(0.0)
-            }
-
-            Color.clear
-                .ignoresSafeArea()
-                .overlay {
-                    GeometryReader { geo in
-                        VStack(alignment: .leading) {
-                            Rectangle()
-                                .fill(Color.white)
-                                .frame(width: 1.0)
-                                .offset(x: geo.size.width * CGFloat(audioEngine.playheadProgress))
+                    .overlay {
+                        GeometryReader { geo in
+                            VStack(alignment: .leading) {
+                                Rectangle()
+                                    .fill(Color.white)
+                                    .frame(width: 1.0)
+                                    .offset(x: (geo.size.width + 6.0) * CGFloat(audioEngine.playheadProgress))
+                            }
+                            .padding(.horizontal, -3.0)
+                            .padding(.vertical, 28.0)
                         }
                     }
+            }
+            .overlay {
+                VStack(spacing: 0.0) {
+                    Image("gradient_top")
+                        .resizable(resizingMode: .stretch)
+                        .frame(height: 50.0)
+                        .padding(.top, 28.0)
+                    Color.clear
+                    Image("gradient_bottom")
+                        .resizable(resizingMode: .stretch)
+                        .frame(height: 70.0)
+                        .padding(.bottom, 28.0)
                 }
+            }
+
 
             VStack {
                 Spacer()
@@ -89,6 +105,7 @@ struct MainView: View {
                 }
                 .frame(width: 60.0, height: 60.0)
                 .foregroundStyle(Color.white)
+                .buttonStyle(ScalingPressButtonStyle())
             }
         }
         .background(Color.black)
